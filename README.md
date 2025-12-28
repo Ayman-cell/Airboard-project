@@ -8,6 +8,7 @@ Système complet de surveillance environnementale et de contrôle des émissions
 - [Architecture du Projet](#architecture-du-projet)
 - [Prérequis](#prérequis)
 - [Installation](#installation)
+- [Récupération des Modèles ML](#récupération-des-modèles-ml)
 - [Configuration des Clés API](#configuration-des-clés-api)
 - [Exécution du Projet](#exécution-du-projet)
 - [Structure du Projet](#structure-du-projet)
@@ -97,6 +98,86 @@ pip --version
 npm list --depth=0  # Frontend
 pip list            # Backend
 ```
+
+## 🤖 Récupération des Modèles ML
+
+Les modèles de Machine Learning sont stockés avec **Git LFS** (Large File Storage) pour optimiser le clonage du repository. Vous devez les télécharger séparément après avoir cloné le projet.
+
+### Prérequis : Installation de Git LFS
+
+**Windows** :
+```bash
+# Télécharger depuis : https://git-lfs.github.com/
+# Ou installer via Chocolatey :
+choco install git-lfs
+
+# Ou installer via winget :
+winget install GitHub.GitLFS
+```
+
+**Linux (Ubuntu/Debian)** :
+```bash
+sudo apt-get install git-lfs
+```
+
+**macOS** :
+```bash
+brew install git-lfs
+```
+
+### Récupération des Modèles
+
+Après avoir cloné le repository, suivez ces étapes :
+
+1. **Initialiser Git LFS** (si ce n'est pas déjà fait) :
+   ```bash
+   git lfs install
+   ```
+
+2. **Télécharger les modèles ML** :
+   ```bash
+   # Depuis la racine du projet
+   git lfs pull
+   ```
+
+   Cette commande télécharge automatiquement tous les modèles depuis GitHub :
+   - `Info Windy/Models/xgb_best.pkl` (XGBoost)
+   - `Info Windy/Models/lgbm_best.pkl` (LightGBM)
+   - `Info Windy/Models/hgbr_best.pkl` (Histogram Gradient Boosting)
+   - `Info Windy/Models/model_bundle.pkl` (Bundle avec scalers et métadonnées)
+   - `Info Windy/Models/LSTM_best.keras` (LSTM TensorFlow)
+
+3. **Vérifier que les modèles sont présents** :
+   ```bash
+   # Vérifier les fichiers trackés par Git LFS
+   git lfs ls-files
+   
+   # Vérifier que les fichiers existent
+   ls "Info Windy/Models/"
+   ```
+
+### Alternative : Clonage avec LFS automatique
+
+Si Git LFS est déjà installé, vous pouvez cloner directement avec les fichiers LFS :
+
+```bash
+git clone https://github.com/Jalkyn/Airboard-Project.git
+cd Airboard-Project
+git lfs pull  # Télécharger les modèles
+```
+
+### Dépannage
+
+**Problème** : Les modèles ne se téléchargent pas
+- Vérifiez que Git LFS est installé : `git lfs version`
+- Vérifiez que Git LFS est initialisé : `git lfs install`
+- Essayez de forcer le pull : `git lfs fetch --all` puis `git lfs checkout`
+
+**Problème** : Erreur "Git LFS not found"
+- Installez Git LFS depuis https://git-lfs.github.com/
+- Redémarrez votre terminal après l'installation
+
+> ⚠️ **Important** : Les modèles ML sont nécessaires pour les fonctionnalités de prévision météorologique. Sans ces modèles, l'API `/api/forecast/ml` ne fonctionnera pas correctement.
 
 ## 🔐 Configuration des Clés API
 
@@ -327,6 +408,24 @@ npm install
 2. Vérifiez que le fichier `.env` est à la racine du projet (même niveau que `setup_env.py`)
 3. Vérifiez le format du fichier `.env` (pas d'espaces autour du `=`)
 4. Redémarrez l'application après modification de `.env`
+
+### Problème : Modèles ML manquants
+
+**Symptôme** : Erreur `Modèle xgb non trouvé` ou `Bundle de modèles non trouvé`
+
+**Solution** :
+1. Vérifiez que Git LFS est installé : `git lfs version`
+2. Initialisez Git LFS : `git lfs install`
+3. Téléchargez les modèles : `git lfs pull`
+4. Vérifiez que les fichiers existent dans `Info Windy/Models/` :
+   ```bash
+   ls "Info Windy/Models/"
+   ```
+5. Si les fichiers sont absents, réessayez :
+   ```bash
+   git lfs fetch --all
+   git lfs checkout
+   ```
 
 ## 📚 Documentation Supplémentaire
 
