@@ -60,10 +60,10 @@ Info Windy/conversations_weather/
 !README*.txt
 !requirements.txt
 
-# Model files (large)
-Info Windy/Models/*.pkl
-Info Windy/Models/*.keras
-Info Windy/Models/*.h5
+# Model files (large) - Now tracked with Git LFS
+# Info Windy/Models/*.pkl
+# Info Windy/Models/*.keras
+# Info Windy/Models/*.h5
 
 # Cache
 .cache/
