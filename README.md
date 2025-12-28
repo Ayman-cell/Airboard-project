@@ -456,4 +456,9 @@ Ce projet est développé pour OCP Safi dans le cadre d'un projet académique.
 ---
 
 **Développé par** : Équipe AirBoard - EMINES, Université Mohammed VI Polytechnique de Benguerir
+
+**Membres de l'équipe** :
+- Ayman Amasrour
+- Jad Lasiri
+- Rihab Essafi
   
