@@ -1,4 +1,4 @@
-# �️ AIRBOARD - Plateforme IA de Surveillance Environnementale OCP Safi
+# 🌪️AIRBOARD - Plateforme IA de Surveillance Environnementale OCP Safi
 
 **Système full-stack combinant Machine Learning avancé, IA générative et API REST pour le monitoring intelligent, les prédictions météorologiques et l'analyse environnementale automatisée**
 
