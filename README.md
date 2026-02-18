@@ -20,10 +20,7 @@
 
 ---
 
-<div align="center">
 
-</div>
----
 **AIRBOARD** est une plateforme web enterprise permettant de surveiller en temps réel l'intégrité environnementale du site industriel OCP Safi via des capteurs IoT (~50 paramètres), générer des prévisions météorologiques multi-modèles ML et automatiser la génération d'analyses et rapports experts grâce à l'IA générative.
 
 Ce projet combine :
