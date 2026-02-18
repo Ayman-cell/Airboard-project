@@ -14,13 +14,14 @@
 [![Cerebras](https://img.shields.io/badge/Cerebras-LLM-FF6B00?style=for-the-badge)](https://www.cerebras.ai/)
 [![Gemini](https://img.shields.io/badge/Google-Gemini-4285F4?style=for-the-badge&logo=google)](https://ai.google.dev/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit)](https://streamlit.io/)
+## 🌐 **[DÉCOUVRIR L'APPLICATION](https://airboard-projectfinal.vercel.app/)** 🌐
 
 </div>
 
 ---
 
 <div align="center">
-## 🌐 **[DÉCOUVRIR L'APPLICATION](https://airboard-projectfinal.vercel.app/)** 🌐
+
 </div>
 ---
 **AIRBOARD** est une plateforme web enterprise permettant de surveiller en temps réel l'intégrité environnementale du site industriel OCP Safi via des capteurs IoT (~50 paramètres), générer des prévisions météorologiques multi-modèles ML et automatiser la génération d'analyses et rapports experts grâce à l'IA générative.
